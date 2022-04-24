@@ -25,8 +25,10 @@ const Selected = ({ params }: SelectedProps) => {
         <div className="col-md-10">
           <Pokemon
             name={data?.name}
+            moves={data?.moves}
             height={data?.height}
             weight={data?.weight}
+            xp={data?.base_experience}
             image={data?.sprites?.front_shiny}
           ></Pokemon>
         </div>

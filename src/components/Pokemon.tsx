@@ -1,13 +1,26 @@
-import React, { Fragment } from "react";
+import React from "react";
+
+type MovesType = {
+  move: { name: string; url: string };
+  version_group_details: [];
+};
 
 type PokemonPropType = {
   name: string;
   height: number;
   weight: number;
+  xp: number;
   image: string;
+  moves: Array<MovesType>;
 };
 
-const Pokemon = ({ name, height, weight, image }: PokemonPropType) => {
+const renderMoves = (moves: Array<MovesType>) => {
+  return moves.slice(0, 5).map(({ move }: MovesType) => {
+    return <li>{move?.name}</li>;
+  });
+};
+
+const Pokemon = ({ name, height, weight, image, moves }: PokemonPropType) => {
   return (
     <div className="card" style={{ width: "40rem" }}>
       <img className="card-img-top" src={image} alt="Card image cap" />
@@ -17,8 +30,7 @@ const Pokemon = ({ name, height, weight, image }: PokemonPropType) => {
           Height :{height} Weight: {weight}
         </h6>
         <p className="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          <ul>{renderMoves(moves)}</ul>
         </p>
       </div>
     </div>
