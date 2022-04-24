@@ -1,7 +1,7 @@
 import React from "react";
 import useSWR from "swr";
 
-type BarriesType = {
+type BerriesType = {
   name: string;
   url: string;
 };
@@ -12,8 +12,8 @@ const getId = (url: string): string => {
   return url.substring(url.lastIndexOf("/") - 1, url.lastIndexOf("/"));
 };
 
-const renderItems = (barries: BarriesType[]) => {
-  return barries?.map(({ name, url }: BarriesType) => {
+const renderItems = (berries: BerriesType[]) => {
+  return berries?.map(({ name, url }: BerriesType) => {
     return (
       <div key={getId(url)} className="list-group-item">
         <h5 className="clickable">{name}</h5>

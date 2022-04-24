@@ -11,7 +11,7 @@ const Home = () => {
           <h3>Pokemons</h3>
         </div>
         <div className="col-md-4">
-          <h3>Barries</h3>
+          <h3>Berries</h3>
         </div>
         <div className="col-md-2"></div>
       </div>

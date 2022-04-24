@@ -36,6 +36,5 @@ const Pokemon = ({ name, height, weight, image, moves }: PokemonPropType) => {
     </div>
   );
 };
-11;
 
 export default Pokemon;
